@@ -3,7 +3,9 @@
 This is a numpy implementation to compute the first three moments of a discrete multivariate probability mass function.
 In order to obtain the moments, you just have to create a pmf object and call the methods (at the moment only the first one has been implemented):
 
-```
+```py
+import numpy as np
+
 prob = np.ones((2,4,6))
 prob /= np.sum(prob)
 
