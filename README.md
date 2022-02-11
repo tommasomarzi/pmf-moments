@@ -5,6 +5,7 @@ In order to obtain the moments, you just have to create a pmf object and call th
 
 ```py
 import numpy as np
+from pmf_class import pmf
 
 prob = np.ones((2,4,6))
 prob /= np.sum(prob)
@@ -14,7 +15,7 @@ obj = pmf(prob)
 first_moments = obj.get_first_moment()
 ```
 
-The probability given as input should be thought of as a multidimensional grid (a tensor, if you prefer).
+The probability given as input should be thought of as a multidimensional grid (or a tensor, if you prefer).
 Therefore, the number of variables is arbitrary.
 
 Since this repo is thought to be used for a pmf representing a grid of particles of different species, in the current implementation the domains of the variables are retrieved directly from the pmf and they coincide with the index of each axis, i.e. they range from 0 to the (maximum value - 1) of each species.
